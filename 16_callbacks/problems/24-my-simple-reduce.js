@@ -35,10 +35,10 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 *******************************************************************************/
 
 let mySimpleReduce = function (array, cb) {
-    let acc = 0;
+    let acc = array[0];
+
     for (let i = 1; i < array.length; i++) {
-        acc = cb(array[0], array[i]);
-        array[0] = acc;
+        acc = cb(acc, array[i]);
     }
 
     return acc;
