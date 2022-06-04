@@ -43,7 +43,7 @@ function askGuess() {
 }
 
 function randomInRange(min, max) {
-    return Math.floor(Math.random() * max) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function askRange() {
@@ -59,14 +59,12 @@ function askRange() {
                 console.log(`I'm thinking of a number between ${min} and ${max}`);
 
                 secretNumber = randomInRange(Number(min), Number(max));
-
+                console.log(secretNumber);
                 askGuess();
             }
         })
     })
 }
-
-// askRange();
 
 function askLimit() {
     rl.question("Set the number of attemps: ", numOfAttempts => {
